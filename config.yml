@@ -1,0 +1,42 @@
+
+backend:
+  name: github
+  repo: alexishavart/bal-lyc-ens--tudiants-calais
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "evenement"
+    label: "Informations du bal"
+    files:
+      - name: "informations"
+        label: "Modifier les informations"
+        file: "data/evenement.json"
+        format: "json"
+        fields:
+          - label: "Titre"
+            name: "titre"
+            widget: "string"
+          - label: "Date"
+            name: "date"
+            widget: "string"
+          - label: "Lieu"
+            name: "lieu"
+            widget: "string"
+          - label: "Prix"
+            name: "prix"
+            widget: "number"
+            default: 14
+          - label: "Lien billetterie"
+            name: "billetterie"
+            widget: "string"
+            required: false
+          - label: "Partenaires"
+            name: "partenaires"
+            widget: "list"
+            field:
+              label: "Nom"
+              name: "nom"
+              widget: "string"
